@@ -35,31 +35,30 @@
  */
 package org.dspace.foresite.test;
 
-import org.dspace.foresite.Agent;
-import org.dspace.foresite.OREFactory;
-import org.dspace.foresite.ResourceMap;
-import org.dspace.foresite.ORESerialiser;
-import org.dspace.foresite.ORESerialiserFactory;
-import org.dspace.foresite.Aggregation;
-import org.dspace.foresite.AggregatedResource;
-import org.dspace.foresite.OREParser;
-import org.dspace.foresite.ReMSerialisation;
-import org.dspace.foresite.ResourceMapDocument;
-import org.dspace.foresite.Proxy;
-import org.dspace.foresite.OREParserFactory;
-import org.dspace.foresite.Predicate;
-import org.dspace.foresite.Triple;
-import org.dspace.foresite.TripleSelector;
-
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.net.URI;
 import java.util.Date;
 import java.util.List;
-import java.io.InputStream;
-import java.io.FileInputStream;
 
-import com.hp.hpl.jena.vocabulary.RDFS;
-import com.hp.hpl.jena.vocabulary.RDF;
+import org.dspace.foresite.Agent;
+import org.dspace.foresite.AggregatedResource;
+import org.dspace.foresite.Aggregation;
+import org.dspace.foresite.OREFactory;
+import org.dspace.foresite.OREParser;
+import org.dspace.foresite.OREParserFactory;
+import org.dspace.foresite.ORESerialiser;
+import org.dspace.foresite.ORESerialiserFactory;
+import org.dspace.foresite.Predicate;
+import org.dspace.foresite.Proxy;
+import org.dspace.foresite.ReMSerialisation;
+import org.dspace.foresite.ResourceMap;
+import org.dspace.foresite.ResourceMapDocument;
+import org.dspace.foresite.Triple;
+import org.dspace.foresite.TripleSelector;
+
 import com.hp.hpl.jena.vocabulary.DC;
+import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
  * @Author Richard Jones

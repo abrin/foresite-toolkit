@@ -35,42 +35,42 @@
  */
 package org.dspace.foresite.atom;
 
-import org.dspace.foresite.OREParser;
-import org.dspace.foresite.ResourceMap;
-import org.dspace.foresite.OREParserException;
-import org.dspace.foresite.OREFactory;
-import org.dspace.foresite.Aggregation;
-import org.dspace.foresite.Agent;
-import org.dspace.foresite.OREVocabulary;
-import org.dspace.foresite.OREException;
-import org.dspace.foresite.AggregatedResource;
-import org.dspace.foresite.ReMSerialisation;
-import org.dspace.foresite.Proxy;
-import org.dspace.foresite.Vocab;
-import org.jdom.Element;
-import org.jdom.Namespace;
-import org.jdom.output.XMLOutputter;
-
-
-import java.io.InputStream;
-import java.io.IOException;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
-import com.sun.syndication.io.XmlReader;
-import com.sun.syndication.io.FeedException;
-import com.sun.syndication.io.WireFeedInput;
-import com.sun.syndication.feed.atom.Feed;
-import com.sun.syndication.feed.atom.Person;
-import com.sun.syndication.feed.atom.Link;
-import com.sun.syndication.feed.atom.Category;
-import com.sun.syndication.feed.atom.Generator;
-import com.sun.syndication.feed.atom.Entry;
-import com.sun.syndication.feed.atom.Content;
+import org.dspace.foresite.Agent;
+import org.dspace.foresite.AggregatedResource;
+import org.dspace.foresite.Aggregation;
+import org.dspace.foresite.OREException;
+import org.dspace.foresite.OREFactory;
+import org.dspace.foresite.OREParser;
+import org.dspace.foresite.OREParserException;
+import org.dspace.foresite.OREVocabulary;
+import org.dspace.foresite.Proxy;
+import org.dspace.foresite.ReMSerialisation;
+import org.dspace.foresite.ResourceMap;
+import org.dspace.foresite.Vocab;
+import org.jdom2.Element;
+import org.jdom2.Namespace;
+import org.jdom2.output.XMLOutputter;
+
+import com.rometools.rome.feed.atom.Category;
+import com.rometools.rome.feed.atom.Content;
+import com.rometools.rome.feed.atom.Entry;
+import com.rometools.rome.feed.atom.Feed;
+import com.rometools.rome.feed.atom.Generator;
+import com.rometools.rome.feed.atom.Link;
+import com.rometools.rome.feed.atom.Person;
+import com.rometools.rome.feed.synd.SyndPerson;
+import com.rometools.rome.io.FeedException;
+import com.rometools.rome.io.WireFeedInput;
+import com.rometools.rome.io.XmlReader;
 
 /**
  * @Author: Richard Jones
@@ -99,10 +99,10 @@ public class AtomOREParser implements OREParser
 			List<Link> links = atom.getOtherLinks();
 			List<Link> altLinks = atom.getAlternateLinks();
             links.addAll(altLinks); // add all the links together for convenience
-			List<Person> authors = atom.getAuthors();
+			List<SyndPerson> authors = atom.getAuthors();
 			String title = atom.getTitle();
 			List<Category> categories = atom.getCategories();
-			List<Person> contributors = atom.getContributors();
+			List<SyndPerson> contributors = atom.getContributors();
 			Date updated = atom.getUpdated();
 			Generator generator = atom.getGenerator();
 			String rights = atom.getRights();
@@ -125,7 +125,7 @@ public class AtomOREParser implements OREParser
 			ResourceMap rem = agg.createResourceMap(uri_r);
 
 			// atom:author :: URI-A dcterms:creator
-            for (Person author : authors)
+            for (SyndPerson author : authors)
             {
 				String auri = author.getUri();
 				Agent creator;
@@ -405,10 +405,10 @@ public class AtomOREParser implements OREParser
 		List<Link> altLinks = entry.getAlternateLinks();
 		links.addAll(altLinks); // add all the links together for convenience
 
-		List<Person> authors = entry.getAuthors();
+		List<SyndPerson> authors = entry.getAuthors();
 		String title = entry.getTitle();
 		List<Category> categories = entry.getCategories();
-		List<Person> contributors = entry.getContributors();
+		List<SyndPerson> contributors = entry.getContributors();
 		Content summary = entry.getSummary();
 		List<Element> rdf = (List<Element>) entry.getForeignMarkup();
 
@@ -461,7 +461,7 @@ public class AtomOREParser implements OREParser
 		// atom:author :: URI-AR dcterms:creator
 		if (authors != null)
 		{
-			for (Person author : authors)
+			for (SyndPerson author : authors)
 			{
 				Agent creator;
 				String authorURI = author.getUri();

@@ -35,53 +35,52 @@
  */
 package org.dspace.foresite.atom;
 
-import org.dspace.foresite.ORESerialiser;
-import org.dspace.foresite.ResourceMapDocument;
-import org.dspace.foresite.ResourceMap;
-import org.dspace.foresite.ORESerialiserException;
-import org.dspace.foresite.Aggregation;
-import org.dspace.foresite.OREException;
-import org.dspace.foresite.ReMSerialisation;
-import org.dspace.foresite.Triple;
-import org.dspace.foresite.Agent;
-import org.dspace.foresite.AggregatedResource;
-import org.dspace.foresite.Proxy;
-import org.dspace.foresite.ORESerialiserFactory;
-import org.dspace.foresite.TripleSelector;
-import org.dspace.foresite.jena.AggregationJena;
-import org.jdom.Element;
-import org.jdom.Namespace;
-import org.jdom.JDOMException;
-import org.jdom.Document;
-import org.jdom.input.SAXBuilder;
-
-import java.util.Properties;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Date;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.StringWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.io.StringWriter;
-import java.io.IOException;
-import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Properties;
 
-import com.sun.syndication.feed.atom.Feed;
-import com.sun.syndication.feed.atom.Link;
-import com.sun.syndication.feed.atom.Generator;
-import com.sun.syndication.feed.atom.Entry;
-import com.sun.syndication.feed.atom.Category;
-import com.sun.syndication.feed.atom.Person;
-import com.sun.syndication.feed.atom.Content;
-import com.sun.syndication.feed.synd.SyndFeed;
-import com.sun.syndication.io.WireFeedOutput;
-import com.sun.syndication.io.FeedException;
-import com.sun.syndication.io.SyndFeedOutput;
+import org.dspace.foresite.Agent;
+import org.dspace.foresite.AggregatedResource;
+import org.dspace.foresite.Aggregation;
+import org.dspace.foresite.OREException;
+import org.dspace.foresite.ORESerialiser;
+import org.dspace.foresite.ORESerialiserException;
+import org.dspace.foresite.ORESerialiserFactory;
+import org.dspace.foresite.Proxy;
+import org.dspace.foresite.ReMSerialisation;
+import org.dspace.foresite.ResourceMap;
+import org.dspace.foresite.ResourceMapDocument;
+import org.dspace.foresite.Triple;
+import org.dspace.foresite.TripleSelector;
+import org.dspace.foresite.jena.AggregationJena;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.Namespace;
+import org.jdom2.input.sax.XMLReaders;
+
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.DC;
-import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDFS;
+import com.rometools.rome.feed.atom.Category;
+import com.rometools.rome.feed.atom.Content;
+import com.rometools.rome.feed.atom.Entry;
+import com.rometools.rome.feed.atom.Feed;
+import com.rometools.rome.feed.atom.Generator;
+import com.rometools.rome.feed.atom.Link;
+import com.rometools.rome.feed.atom.Person;
+import com.rometools.rome.feed.synd.SyndPerson;
+import com.rometools.rome.io.FeedException;
+import com.rometools.rome.io.SAXBuilder;
+import com.rometools.rome.io.WireFeedOutput;
 
 /**
  * @Author Richard Jones
@@ -122,7 +121,7 @@ public class AtomORESerialiser implements ORESerialiser
 			List<Link> alternates = new ArrayList<Link>();
 			List<Element> foreign = new ArrayList<Element>();
 			List<Category> cats = new ArrayList<Category>();
-			List<Person> contribs = new ArrayList<Person>();
+			List<SyndPerson> contribs = new ArrayList<SyndPerson>();
 
 			// Do the cross-walk
 			////////////////////
@@ -349,7 +348,7 @@ public class AtomORESerialiser implements ORESerialiser
 
 			// atom:author :: Aggregation creators
 			List<Agent> agents = agg.getCreators();
-			List<Person> authors = new ArrayList<Person>();
+			List<SyndPerson> authors = new ArrayList<SyndPerson>();
 			for (Agent agent : agents)
 			{
 				Person author = new Person();
@@ -575,7 +574,7 @@ public class AtomORESerialiser implements ORESerialiser
 
 			// now read the XML into a JDOM document
 			ByteArrayInputStream is = new ByteArrayInputStream(rdfxml.getBytes());
-			SAXBuilder builder = new SAXBuilder();
+			SAXBuilder builder = new SAXBuilder(XMLReaders.XSDVALIDATING);
 			Document document = builder.build(is);
 
 			// now get the element list out of the document
@@ -675,7 +674,7 @@ public class AtomORESerialiser implements ORESerialiser
 
 		// atom:author :: Aggregation creators
 		List<Agent> agents = ar.getCreators();
-		List<Person> authors = new ArrayList<Person>();
+		List<SyndPerson> authors = new ArrayList<SyndPerson>();
 		if (agents != null)
 		{
 			for (Agent agent : agents)
