@@ -35,6 +35,7 @@
  */
 package org.dspace.foresite;
 
+import java.util.Date;
 import java.util.List;
 import java.net.URI;
 
@@ -217,4 +218,16 @@ public interface AggregatedResource extends OREResource
 	 * @throws OREException
 	 */
 	Proxy createProxy(URI proxyURI) throws OREException;
+	
+	
+	void addIdentifier(String identifier) throws OREException;
+	
+	void addDescription(String description) throws OREException;
+
+    void addFormat(String format) throws OREException;
+
+    void addModified(Date modified) throws OREException;
+
+    void addCreated(Date created) throws OREException;
+
 }

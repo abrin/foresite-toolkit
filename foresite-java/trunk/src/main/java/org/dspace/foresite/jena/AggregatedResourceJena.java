@@ -35,31 +35,31 @@
  */
 package org.dspace.foresite.jena;
 
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.ResIterator;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.Literal;
-import com.hp.hpl.jena.rdf.model.RDFNode;
-import com.hp.hpl.jena.rdf.model.Selector;
-import com.hp.hpl.jena.rdf.model.SimpleSelector;
-import com.hp.hpl.jena.vocabulary.RDF;
-
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
+import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.dspace.foresite.AggregatedResource;
 import org.dspace.foresite.Aggregation;
 import org.dspace.foresite.OREException;
+import org.dspace.foresite.Predicate;
+import org.dspace.foresite.Proxy;
 import org.dspace.foresite.Triple;
 import org.dspace.foresite.TripleSelector;
-import org.dspace.foresite.Proxy;
-import org.dspace.foresite.Agent;
 import org.dspace.foresite.Vocab;
+
+import com.hp.hpl.jena.rdf.model.Literal;
+import com.hp.hpl.jena.rdf.model.ResIterator;
+import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.Selector;
+import com.hp.hpl.jena.rdf.model.SimpleSelector;
+import com.hp.hpl.jena.rdf.model.Statement;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
+import com.hp.hpl.jena.vocabulary.RDF;
 
 /**
  * @Author Richard Jones
@@ -294,4 +294,30 @@ public class AggregatedResourceJena extends OREResourceJena implements Aggregate
 	{
 		return Vocab.ore_AggregatedResource;
 	}
+
+    public void addIdentifier(String identifier) throws OREException {
+        Predicate pred = new Predicate(Vocab.dcterms_Identifier);
+        createTriple(pred, identifier);
+        
+    }
+
+    public void addFormat(String format) throws OREException {
+        Predicate pred = new Predicate(Vocab.dc_format);
+        createTriple(pred, format);
+    }
+
+    public void addDescription(String description) throws OREException {
+        Predicate pred = new Predicate(Vocab.dcterms_Description);
+        createTriple(pred, description);
+    }
+
+    public void addCreated(Date created) throws OREException {
+        Predicate pred = new Predicate(Vocab.dcterms_Created);
+        createTriple(pred, created);
+    }
+
+    public void addModified(Date modified) throws OREException {
+        Predicate pred = new Predicate(Vocab.dcterms_Modified);
+        createTriple(pred, modified);
+    }
 }

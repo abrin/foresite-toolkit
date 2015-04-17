@@ -46,55 +46,29 @@ import java.util.Properties;
  */
 public class ORESerialiserFactory
 {
+
+    public static ORESerialiser getInstance(ORESerializationType type)
+    {
+        switch (type) {
+            case RDFA:
+                return new RDFaORESerialiser();
+            case ATOM1:
+                return new AtomORESerialiser();
+            default:
+                Properties properties = new Properties();
+                ORESerialiser s = new JenaORESerialiser();
+                properties.setProperty("type", type.getType());
+                s.configure(properties);
+                return s;
+        }
+    }
+
     public static ORESerialiser getInstance(String desc)
     {
-        if ("RDF/XML".equals(desc))
-        {
-            Properties properties = new Properties();
-            properties.setProperty("type", "RDF/XML");
-            ORESerialiser s = new JenaORESerialiser();
-            s.configure(properties);
-            return s;
-        }
-        if ("N-TRIPLE".equals(desc))
-        {
-            Properties properties = new Properties();
-            properties.setProperty("type", "N-TRIPLE");
-            ORESerialiser s = new JenaORESerialiser();
-            s.configure(properties);
-            return s;
-        }
-        if ("RDF/XML-ABBREV".equals(desc))
-        {
-            Properties properties = new Properties();
-            properties.setProperty("type", "RDF/XML-ABBREV");
-            ORESerialiser s = new JenaORESerialiser();
-            s.configure(properties);
-            return s;
-        }
-        if ("N3".equals(desc))
-        {
-            Properties properties = new Properties();
-            properties.setProperty("type", "N3");
-            ORESerialiser s = new JenaORESerialiser();
-            s.configure(properties);
-            return s;
-        }
-		if ("TURTLE".equals(desc))
-        {
-            Properties properties = new Properties();
-            properties.setProperty("type", "TURTLE");
-            ORESerialiser s = new JenaORESerialiser();
-            s.configure(properties);
-            return s;
-        }
-		if ("RDFa".equals(desc))
-        {
-            return new RDFaORESerialiser();
-        }
-        if ("ATOM-1.0".equals(desc))
-        {
-            return new AtomORESerialiser();
+        for (ORESerializationType type : ORESerializationType.values()) {
+            if (type.getType().equals(desc)) {
+                return getInstance(type);
+            }
         }
         return null;
     }

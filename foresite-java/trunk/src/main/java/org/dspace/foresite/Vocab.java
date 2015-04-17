@@ -64,10 +64,15 @@ public enum Vocab
 	ore_Proxy				("ore", "Proxy", 				"http://www.openarchives.org/ore/terms/Proxy", 				"http://www.openarchives.org/ore/terms/"),
 
 	// Dublin Core
-	dc_title("dc", "title", "http://purl.org/dc/elements/1.1/title", "http://purl.org/dc/elements/1.1/"),
+    dc_title("dc", "title", "http://purl.org/dc/elements/1.1/title", "http://purl.org/dc/elements/1.1/"),
+    dc_format("dc", "format", "http://purl.org/dc/elements/1.1/format", "http://purl.org/dc/elements/1.1/"),
 
 	// DC Terms
 	dcterms_Agent("dcterms", "Agent", "http://purl.org/dc/terms/Agent", "http://purl.org/dc/terms/"),
+    dcterms_Identifier("dcterms", "Identifier", "http://purl.org/dc/terms/Identifier", "http://purl.org/dc/terms/"),
+    dcterms_Description("dcterms", "Description", "http://purl.org/dc/terms/Description", "http://purl.org/dc/terms/"),
+    dcterms_Created("dcterms", "Created", "http://purl.org/dc/terms/Created", "http://purl.org/dc/terms/"),
+    dcterms_Modified("dcterms", "Modified", "http://purl.org/dc/terms/Modified", "http://purl.org/dc/terms/"),
 
 	// RDFS: predicates
 	rdfs_label("rdfs", "label", "http://www.w3.org/2000/01/rdf-schema#label", "http://www.w3.org/2000/01/rdf-schema#");

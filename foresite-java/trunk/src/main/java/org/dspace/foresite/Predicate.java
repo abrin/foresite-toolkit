@@ -63,6 +63,13 @@ public class Predicate
         return prefix + ":" + name;
     }*/
 
+    public Predicate(Vocab vocab) {
+        setName(vocab.element());
+        setNamespace(vocab.ns().toString());
+        setPrefix(vocab.schema());
+        setURI(vocab.uri());
+    }
+
     public URI getURI()
     {
         return uri;
