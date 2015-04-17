@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
    <modelVersion>4.0.0</modelVersion>
-   <groupId>com.googlecode.foresite-toolkit</groupId>
+   <groupId>org.digitalantiquity.foresite-toolkit</groupId>
    <artifactId>foresite</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1</version>
 
 
     <!-- brings the sonatype snapshot repository and signing requirement on board -->
@@ -25,13 +25,17 @@
     </licenses>
     <scm>
         <url>https://foresite-toolkit.googlecode.com/svn/foresite-java/trunk/</url>
-        <developerConnection>scm:svn:https://foresite-toolkit.googlecode.com/svn/foresite-java/trunk/</developerConnection>
-        <connection>scm:svn:http://foresite-toolkit.googlecode.com/svn/foresite-java/trunk/</connection>
+        <developerConnection>scm:git:https://github.com/abrin/foresite-toolkit.git</developerConnection>
+        <connection>scm:git:https://github.com/abrin/foresite-toolkit.git</connection>
     </scm>
     <developers>
         <developer>
-            <name>Richard Jones</name>
+            <name>Adam Brin</name>
             <email>rich.d.jones@gmail.com</email>
+        </developer>
+        <developer>
+            <name>Adam Brin</name>
+            <email>abrin@digitalantiquity.org</email>
         </developer>
     </developers>
 
@@ -80,7 +84,7 @@
                    </execution>
                </executions>
            </plugin>
-           <plugin>
+           <!-- <plugin>
                <groupId>org.apache.maven.plugins</groupId>
                <artifactId>maven-javadoc-plugin</artifactId>
                <executions>
@@ -92,7 +96,7 @@
                        </goals>
                    </execution>
                </executions>
-           </plugin>
+           </plugin> -->
        </plugins>
     </build>
     
