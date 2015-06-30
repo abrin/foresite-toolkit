@@ -35,21 +35,22 @@
  */
 package org.dspace.foresite.jena;
 
-import org.dspace.foresite.Triple;
-import org.dspace.foresite.OREResource;
-import org.dspace.foresite.Predicate;
-import org.dspace.foresite.OREException;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.rdf.model.RDFNode;
-import com.hp.hpl.jena.rdf.model.Literal;
-
 import java.net.URI;
 import java.net.URISyntaxException;
+
+import org.dspace.foresite.OREException;
+import org.dspace.foresite.OREResource;
+import org.dspace.foresite.Predicate;
+import org.dspace.foresite.Triple;
+
+import com.hp.hpl.jena.rdf.model.Literal;
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.RDFNode;
+import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.Statement;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
  * @Author Richard Jones

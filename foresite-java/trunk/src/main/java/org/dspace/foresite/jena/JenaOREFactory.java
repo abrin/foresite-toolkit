@@ -35,25 +35,26 @@
  */
 package org.dspace.foresite.jena;
 
-import org.dspace.foresite.Aggregation;
-import org.dspace.foresite.Agent;
-import org.dspace.foresite.ResourceMap;
-import org.dspace.foresite.AggregatedResource;
-import org.dspace.foresite.Proxy;
-import org.dspace.foresite.Triple;
-import org.dspace.foresite.OREException;
-import org.dspace.foresite.Predicate;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.RDFNode;
-import com.hp.hpl.jena.rdf.model.Literal;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.AnonId;
-
 import java.net.URI;
 import java.net.URISyntaxException;
+
+import org.dspace.foresite.Agent;
+import org.dspace.foresite.AggregatedResource;
+import org.dspace.foresite.Aggregation;
+import org.dspace.foresite.OREException;
+import org.dspace.foresite.Predicate;
+import org.dspace.foresite.Proxy;
+import org.dspace.foresite.ResourceMap;
+import org.dspace.foresite.Triple;
+
+import com.hp.hpl.jena.rdf.model.AnonId;
+import com.hp.hpl.jena.rdf.model.Literal;
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.RDFNode;
+import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.Statement;
 
 /**
  * @Author Richard Jones

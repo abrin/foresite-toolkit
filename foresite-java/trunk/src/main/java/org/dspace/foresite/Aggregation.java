@@ -35,8 +35,9 @@
  */
 package org.dspace.foresite;
 
-import java.util.*;
 import java.net.URI;
+import java.util.Date;
+import java.util.List;
 
 /**
  * @Author Richard Jones

@@ -66,7 +66,6 @@ import com.rometools.rome.feed.atom.Entry;
 import com.rometools.rome.feed.atom.Feed;
 import com.rometools.rome.feed.atom.Generator;
 import com.rometools.rome.feed.atom.Link;
-import com.rometools.rome.feed.atom.Person;
 import com.rometools.rome.feed.synd.SyndPerson;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.WireFeedInput;

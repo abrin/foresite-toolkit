@@ -35,41 +35,39 @@
  */
 package org.dspace.foresite.jena;
 
-import org.dspace.foresite.Aggregation;
-import org.dspace.foresite.Agent;
-import org.dspace.foresite.AggregatedResource;
-import org.dspace.foresite.ReMSerialisation;
-import org.dspace.foresite.OREException;
-import org.dspace.foresite.ResourceMap;
-import org.dspace.foresite.OREFactory;
-import org.dspace.foresite.Proxy;
-import org.dspace.foresite.DateParser;
-import org.dspace.foresite.OREParserException;
-import org.dspace.foresite.Vocab;
-
-import java.util.Calendar;
-import java.util.List;
-import java.util.Date;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.bind.DatatypeConverter;
 
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
+import org.dspace.foresite.Agent;
+import org.dspace.foresite.AggregatedResource;
+import org.dspace.foresite.Aggregation;
+import org.dspace.foresite.DateParser;
+import org.dspace.foresite.OREException;
+import org.dspace.foresite.OREFactory;
+import org.dspace.foresite.OREParserException;
+import org.dspace.foresite.Proxy;
+import org.dspace.foresite.ReMSerialisation;
+import org.dspace.foresite.ResourceMap;
+import org.dspace.foresite.Vocab;
+
+import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.RDFNode;
-import com.hp.hpl.jena.rdf.model.Literal;
+import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Selector;
 import com.hp.hpl.jena.rdf.model.SimpleSelector;
-import com.hp.hpl.jena.vocabulary.DCTerms;
+import com.hp.hpl.jena.rdf.model.Statement;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.vocabulary.DC;
+import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 

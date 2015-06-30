@@ -35,11 +35,11 @@
  */
 package org.dspace.foresite;
 
+import java.util.Properties;
+
 import org.dspace.foresite.atom.AtomOREParser;
 import org.dspace.foresite.jena.JenaOREParser;
 import org.dspace.foresite.rdfa.RDFaOREParser;
-
-import java.util.Properties;
 
 /**
  * @Author Richard Jones

@@ -35,19 +35,20 @@
  */
 package org.dspace.foresite.jena;
 
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import org.dspace.foresite.ORESerialiser;
-import org.dspace.foresite.ResourceMapDocument;
-import org.dspace.foresite.ResourceMap;
-import org.dspace.foresite.ORESerialiserException;
-import org.dspace.foresite.OREException;
-import org.dspace.foresite.REMValidator;
-
-import java.util.Properties;
-import java.io.OutputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
+import java.util.Properties;
+
+import org.dspace.foresite.OREException;
+import org.dspace.foresite.ORESerialiser;
+import org.dspace.foresite.ORESerialiserException;
+import org.dspace.foresite.REMValidator;
+import org.dspace.foresite.ResourceMap;
+import org.dspace.foresite.ResourceMapDocument;
+
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
  * @Author Richard Jones

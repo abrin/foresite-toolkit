@@ -35,24 +35,23 @@
  */
 package org.dspace.foresite.jena;
 
-import org.dspace.foresite.Proxy;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.dspace.foresite.AggregatedResource;
 import org.dspace.foresite.Aggregation;
 import org.dspace.foresite.OREException;
-import org.dspace.foresite.Agent;
+import org.dspace.foresite.Proxy;
 import org.dspace.foresite.Vocab;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.net.URI;
-import java.net.URISyntaxException;
-
+import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.Selector;
 import com.hp.hpl.jena.rdf.model.SimpleSelector;
-import com.hp.hpl.jena.rdf.model.RDFNode;
+import com.hp.hpl.jena.rdf.model.Statement;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.vocabulary.RDF;
 
 /**

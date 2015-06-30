@@ -35,13 +35,13 @@
  */
 package org.dspace.foresite.rdfa;
 
-import org.dspace.foresite.OREParser;
-import org.dspace.foresite.ResourceMap;
-import org.dspace.foresite.OREParserException;
-
 import java.io.InputStream;
 import java.net.URI;
 import java.util.Properties;
+
+import org.dspace.foresite.OREParser;
+import org.dspace.foresite.OREParserException;
+import org.dspace.foresite.ResourceMap;
 
 /**
  * @Author Richard Jones

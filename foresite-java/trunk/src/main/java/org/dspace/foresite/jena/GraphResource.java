@@ -35,13 +35,13 @@
  */
 package org.dspace.foresite.jena;
 
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.AnonId;
-
 import java.net.URI;
 
 import org.dspace.foresite.OREException;
+
+import com.hp.hpl.jena.rdf.model.AnonId;
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.Resource;
 
 /**
  * @Author Richard Jones

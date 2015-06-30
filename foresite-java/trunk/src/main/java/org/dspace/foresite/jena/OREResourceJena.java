@@ -35,37 +35,37 @@
  */
 package org.dspace.foresite.jena;
 
-import org.dspace.foresite.OREResource;
-import org.dspace.foresite.OREException;
-import org.dspace.foresite.Triple;
-import org.dspace.foresite.TripleSelector;
-import org.dspace.foresite.Predicate;
-import org.dspace.foresite.OREFactory;
-import org.dspace.foresite.Vocab;
-import org.dspace.foresite.OREModel;
-import org.dspace.foresite.Agent;
-
+import java.io.ByteArrayInputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
+import java.util.List;
 import java.util.regex.Matcher;
-import java.io.ByteArrayInputStream;
+import java.util.regex.Pattern;
 
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.rdf.model.Statement;
+import org.dspace.foresite.Agent;
+import org.dspace.foresite.OREException;
+import org.dspace.foresite.OREFactory;
+import org.dspace.foresite.OREModel;
+import org.dspace.foresite.OREResource;
+import org.dspace.foresite.Predicate;
+import org.dspace.foresite.Triple;
+import org.dspace.foresite.TripleSelector;
+import org.dspace.foresite.Vocab;
+
+import com.hp.hpl.jena.rdf.model.AnonId;
+import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Selector;
-import com.hp.hpl.jena.rdf.model.SimpleSelector;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
-import com.hp.hpl.jena.rdf.model.Literal;
-import com.hp.hpl.jena.rdf.model.AnonId;
-import com.hp.hpl.jena.vocabulary.RDF;
+import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.Selector;
+import com.hp.hpl.jena.rdf.model.SimpleSelector;
+import com.hp.hpl.jena.rdf.model.Statement;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.vocabulary.DC;
+import com.hp.hpl.jena.vocabulary.RDF;
 
 /**
  * @Author Richard Jones

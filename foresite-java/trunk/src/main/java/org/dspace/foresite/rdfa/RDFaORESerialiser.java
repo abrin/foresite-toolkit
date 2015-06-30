@@ -35,27 +35,27 @@
  */
 package org.dspace.foresite.rdfa;
 
-import org.dspace.foresite.ORESerialiser;
-import org.dspace.foresite.ResourceMapDocument;
-import org.dspace.foresite.ResourceMap;
-import org.dspace.foresite.ORESerialiserException;
-import org.dspace.foresite.ORESerialiserFactory;
-
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.transform.stream.StreamResult;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.io.InputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.ByteArrayInputStream;
-import java.io.FileReader;
-import java.io.Reader;
+
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
+
+import org.dspace.foresite.ORESerialiser;
+import org.dspace.foresite.ORESerialiserException;
+import org.dspace.foresite.ORESerialiserFactory;
+import org.dspace.foresite.ResourceMap;
+import org.dspace.foresite.ResourceMapDocument;
 
 /**
  * @Author Richard Jones

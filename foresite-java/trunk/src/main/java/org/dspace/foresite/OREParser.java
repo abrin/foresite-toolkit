@@ -36,8 +36,8 @@
 package org.dspace.foresite;
 
 import java.io.InputStream;
-import java.util.Properties;
 import java.net.URI;
+import java.util.Properties;
 
 /**
  * @Author Richard Jones

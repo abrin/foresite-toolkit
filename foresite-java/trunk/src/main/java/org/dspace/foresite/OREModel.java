@@ -1,7 +1,5 @@
 package org.dspace.foresite;
 
-import java.net.URI;
-
 /**
  * Created by IntelliJ IDEA.
  * User: richard

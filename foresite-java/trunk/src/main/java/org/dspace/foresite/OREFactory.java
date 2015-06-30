@@ -35,14 +35,14 @@
  */
 package org.dspace.foresite;
 
-import org.dspace.foresite.jena.ResourceMapJena;
-import org.dspace.foresite.jena.AgentJena;
-import org.dspace.foresite.jena.AggregationJena;
-import org.dspace.foresite.jena.AggregatedResourceJena;
-import org.dspace.foresite.jena.ProxyJena;
-import org.dspace.foresite.jena.TripleJena;
-
 import java.net.URI;
+
+import org.dspace.foresite.jena.AgentJena;
+import org.dspace.foresite.jena.AggregatedResourceJena;
+import org.dspace.foresite.jena.AggregationJena;
+import org.dspace.foresite.jena.ProxyJena;
+import org.dspace.foresite.jena.ResourceMapJena;
+import org.dspace.foresite.jena.TripleJena;
 
 /**
  * @Author Richard Jones
