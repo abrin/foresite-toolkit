@@ -57,8 +57,8 @@ import org.dspace.foresite.ResourceMapDocument;
 import org.dspace.foresite.Triple;
 import org.dspace.foresite.TripleSelector;
 
-import com.hp.hpl.jena.vocabulary.DC;
-import com.hp.hpl.jena.vocabulary.RDFS;
+import org.apache.jena.vocabulary.DC;
+import org.apache.jena.vocabulary.RDFS;
 
 /**
  * @Author Richard Jones

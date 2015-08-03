@@ -1,12 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.digitalantiquity.foresite-toolkit</groupId>
     <artifactId>foresite</artifactId>
-    <version>0.2.1</version>
+    <version>0.2-SNAPSHOT</version>
     <!-- http://veithen.github.io/2013/05/26/github-bintray-maven-release-plugin.html -->
-    <properties>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
-    </properties>
     
     <!-- brings the sonatype snapshot repository and signing requirement 
         on board -->
@@ -31,8 +29,7 @@
         <url>https://foresite-toolkit.googlecode.com/svn/foresite-java/trunk/</url>
         <developerConnection>scm:git:https://github.com/abrin/foresite-toolkit.git</developerConnection>
         <connection>scm:git:https://github.com/abrin/foresite-toolkit.git</connection>
-      <tag>foresite-0.2</tag>
-  </scm>
+    </scm>
     <distributionManagement>
         <repository>
             <id>bintray</id>
@@ -106,12 +103,12 @@
         <dependency>
             <groupId>org.apache.jena</groupId>
             <artifactId>jena-core</artifactId>
-            <version>3.0.0</version>
+            <version>2.12.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.jena</groupId>
             <artifactId>jena-arq</artifactId>
-            <version>3.0.0</version>
+            <version>2.12.0</version>
         </dependency>
         <dependency>
             <groupId>com.rometools</groupId>
