@@ -1,24 +1,37 @@
 # foresite-toolkit
-Automatically exported from code.google.com/p/foresite-toolkit
+Automatically exported from code.google.com/p/foresite-toolkit; updated to include newer java dependencies 
 
 Maven Repo:
 
         <repository>
+            <id>internal</id>
+            <name>Archiva Managed Internal Repository</name>
+            <url>https://dev.tdar.org/archiva/repository/internal/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <id>jcenter</id>
-            <url>http://jcenter.bintray.com</url>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>Archiva Managed Snapshot Repository</name>
+            <url>https://dev.tdar.org/archiva/repository/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
 
 
-        <dependency>
-            <!-- declared dependency with excludes for DataOne and maven 
-                version management -->
-            <artifactId>foresite</artifactId>
-            <groupId>org.digitalantiquity.foresite-toolkit</groupId>
-            <version>0.2</version>
-        </dependency>
+     <dependency>
+          <groupId>org.digitalantiquity.foresite-toolkit</groupId>
+          <artifactId>foresite</artifactId>
+          <version>0.2.1</version>
+    </dependency>
 
 Libraries for constructing, parsing, manipulating and serializing OAI-ORE Resource Maps.
 
